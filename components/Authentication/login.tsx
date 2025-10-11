@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { useEffect } from "react";
 
 export default function SignIn() {
   async function loading() {
@@ -59,7 +58,7 @@ export default function SignIn() {
         <div className="flex items-center justify-center gap-1 mt-6">
           <h1 className="text-base text-foreground">Don't have an account?</h1>
           <Link
-            href="/register"
+            href="register"
             className="text-primary hover:underline underline-offset-4 decoration-[1px] font-medium"
           >
             Sign up

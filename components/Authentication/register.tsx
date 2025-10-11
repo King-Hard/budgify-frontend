@@ -74,7 +74,7 @@ export default function SignUp() {
 
           <div className="mt-4 mb-4">
             <div className="flex items-center gap-1">
-              <Checkbox defaultChecked/>
+              <Checkbox defaultChecked className="mt-1"/>
               <p>I have read and agree to the</p>
               <div className="flex items-center gap-2">
                 <span className="font-medium underline underline-offset-4 decoration-[1px]">Terms & Conditions</span>

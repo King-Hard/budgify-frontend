@@ -3,5 +3,5 @@ export default function Dashboard() {
     <div>
       Dashboard HAHAHAHA
     </div>
-  )
+  );
 }

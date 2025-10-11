@@ -6,7 +6,7 @@ import { useEffect } from "react"
 export default function Loading() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = "/dashboard"
+      window.location.href = "/budgify.com/dashboard"
     }, 2000) // 2 seconds
 
     return () => clearTimeout(timer)

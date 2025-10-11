@@ -3,7 +3,7 @@ import { Wallet } from "lucide-react";
 
 export default function Login() {
   return (
-    <div className="grid sm:grid-cols-1 lg:grid-cols-2 absolute inset-0 z-0 divide-x-2 divide-gray-300"
+    <div className="grid sm:grid-cols-1 lg:grid-cols-2 absolute inset-0 z-0 divide-x-2"
       
     >
       <div className="hidden lg:inline min-h-screen w-full relative">
