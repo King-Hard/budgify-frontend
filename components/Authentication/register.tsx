@@ -6,11 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Info } from "lucide-react";
 import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+  const router = useRouter();
+  
   async function loading() {
-    redirect("/loading");
+    router.push("/loading");
   }
 
   return (
@@ -78,7 +80,7 @@ export default function SignUp() {
               <p>I have read and agree to the</p>
               <div className="flex items-center gap-2">
                 <span className="font-medium underline underline-offset-4 decoration-[1px]">Terms & Conditions</span>
-                <div title={`By agreeing to these terms, you accept the \nrules and guidelines for using the Budgify \nplatform.`}>
+                <div title={`By agreeing to these terms, you accept the \nrules and guidelines for using the Budgify.`}>
                   <Info size={14} className="mt-1" />
                 </div>
               </div>

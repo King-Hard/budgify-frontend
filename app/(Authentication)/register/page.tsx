@@ -10,8 +10,8 @@ export default function Register() {
         <div className="flex items-center justify-center"
           style={{ minHeight: "calc(100dvh - 20px)" }}
         >
-          <div className="flex items-center">
-            <Wallet size={40} className="mt-2"/>
+          <div className="flex items-center gap-2">
+            <Wallet size={42} className="mt-2"/>
             <p className="text-5xl font-medium">BUDGIFY</p>
           </div>
         </div>

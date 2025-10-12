@@ -4,19 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
+  const router = useRouter();
+  
   async function loading() {
-    redirect("/loading");
+    router.push("/loading");
   }
 
   return (
     <div className="">
       <div className="p-5 w-md">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2 text-foreground">
-            Welcome Back!
+          <h1 className="text-3xl font-semibold mb-2 text-foreground">
+            Welcome back!
           </h1>
           <p className="text-base text-muted-foreground">
             Log in to continue your account
@@ -42,7 +44,7 @@ export default function SignIn() {
             />
           </div>
 
-          <div className="cursor-pointer font-medium flex items-center justify-end text-base mt-4 mb-4 text-primary hover:underline underline-offset-4 decoration-[1px]">
+          <div className="font-medium cursor-pointer flex items-center justify-end mt-4 mb-4 text-primary hover:underline underline-offset-4 decoration-[1px]">
             Forgot password?
           </div>
 
@@ -56,20 +58,21 @@ export default function SignIn() {
         </form>
 
         <div className="flex items-center justify-center gap-1 mt-6">
-          <h1 className="text-base text-foreground">Don't have an account?</h1>
+          <h1 className="">Don't have an account?</h1>
           <Link
             href="register"
-            className="text-primary hover:underline underline-offset-4 decoration-[1px] font-medium"
+            className="hover:underline underline-offset-4 decoration-[1px] font-medium"
           >
-            Sign up
+            Sign up 
           </Link> 
         </div>
 
-        <div className="flex items-center justify-center gap-1 mt-6 text-foreground">
-          <p>Need help?</p>
-          <span className="cursor-pointer font-medium text-primary hover:underline underline-offset-4 decoration-[1px]">
+        <div className="flex items-center justify-center gap-1 mt-6">
+          <p className="font-normal">Need help?</p>
+          <span className="cursor-pointer font-medium hover:underline underline-offset-4 decoration-[1px]">
             Contact us
           </span>
+          
         </div>
       </div>
     </div>
