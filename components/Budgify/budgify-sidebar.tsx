@@ -42,7 +42,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               className="flex items-center gap-2 cursor-default"
             >
               <LayoutDashboard strokeWidth={1.5} size={18}/> 
-              <p className="">Dashboard</p>
+              <p className="text-[15px]">Dashboard</p>
             </Link>
           </div>
 
@@ -51,8 +51,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               href="/budgify.com/transaction"
               className="flex items-center gap-2 cursor-default"
             >
-              <ArrowLeftRight strokeWidth={1.5} size={18}/> 
-              <p className="">Transaction</p>
+              <ArrowLeftRight strokeWidth={2} size={16}/> 
+              <p className="text-[15px]">Transaction</p>
             </Link>
           </div>
 
@@ -61,8 +61,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               href="/budgify.com/bill-reminder"
               className="flex items-center gap-2 cursor-default"
             >
-              <Bell strokeWidth={1.5} size={18}/> 
-              <p className="">Bill Reminder</p>
+              <Bell strokeWidth={2} size={16}/> 
+              <p className="text-[15px]">Bill Reminder</p>
             </Link>
           </div>
 
@@ -71,8 +71,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               href="/budgify.com/goal-tracker"
               className="flex items-center gap-2 cursor-default"
             >
-              <Target strokeWidth={1.5} size={18}/> 
-              <p className="text-[16px]">Goal Tracker</p>
+              <Target strokeWidth={2} size={16}/> 
+              <p className="text-[15px]">Goal Tracker</p>
             </Link>
           </div>
         </SidebarGroup>
@@ -83,28 +83,28 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
             <div className="py-2 px-4 rounded-lg border">
               <div className="flex items-center justify-between mb-1">
                 <h1 className="text-muted-foreground text-sm">Income</h1>
-                <TrendingUp strokeWidth={1.5} size={18} className="text-green-300"/>
+                <TrendingUp strokeWidth={2} size={16} className="text-green-300"/>
               </div>
-              <p className="font-medium text-xl">₱57,100</p>
+              <p className="font-medium text-xl">₱107,100</p>
             </div>
 
             <div className="py-2 px-4 rounded-lg border">
               <div className="flex items-center justify-between mb-1">
                 <h1 className="text-muted-foreground">Expenses</h1>
-                <TrendingDown strokeWidth={1.5} size={18} className="text-red-300"/>
+                <TrendingDown strokeWidth={2} size={16} className="text-red-300"/>
               </div>
-              <p className="font-medium text-xl">₱29,200</p>
+              <p className="font-medium text-xl">₱89,400</p>
             </div>
           </SidebarGroup>
         </div>
 
-        <SidebarGroup className="mt-19">
-          <div className="hover:bg-accent px-2.5 py-1.5 rounded-lg">
+        <SidebarGroup className="mt-18.5">
+          <div className="hover:bg-accent px-2.5 py-1.5 rounded-lg mb-0.5">
             <div 
               className="flex items-center gap-2 cursor-default"
             >
-              <Settings strokeWidth={1.5} size={18} className="mt-0.5"/> 
-              <p className="">Settings</p>
+              <Settings strokeWidth={2} size={16} className=" mt-0.5"/> 
+              <p className="text-[15px]">Settings</p>
             </div>
           </div>
 
@@ -112,8 +112,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
             <div 
               className="flex items-center gap-2 cursor-default"
             >
-              <CircleQuestionMark strokeWidth={1.5} size={18}/> 
-              <p className="">Get Help</p>
+              <CircleQuestionMark strokeWidth={2} size={16}/> 
+              <p className="text-[15px]">Get Help</p>
             </div>
           </div>
         </SidebarGroup>
@@ -187,14 +187,11 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               </div>
             </div>
 
-            <div className="mb-2 px-1.5">
+            <div className="mb-2 px-1.5" onClick={(login)}>
               <div className="hover:bg-input px-2.5 py-1.5 rounded-lg">
                 <div className="flex items-center gap-2 cursor-default">
                   <LogOut strokeWidth={1.5} size={16}/> 
-                  <p 
-                    onClick={(login)}
-                    className="text-[14px]"
-                  >
+                  <p className="text-[14px]">
                     Log out
                   </p>
                 </div>

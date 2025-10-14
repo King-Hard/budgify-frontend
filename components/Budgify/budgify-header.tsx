@@ -4,9 +4,9 @@ export default function SiteHeader({isBudgetMode}) {
   return (
     <header className="flex items-center border-b px-2 py-4">
       <div className="flex items-center gap-2">
-        <SidebarTrigger className="ml-1"/>
+        <SidebarTrigger className="border ml-3 rounded bg-card border-transparent hover:border-input hover:ring-2 hover:ring-ring hover:ring-offset-1 transition-all"/>
         <h1 className="text-base">
-          {isBudgetMode ? "Budget Mode" : "Financial Dashboard"}
+          {isBudgetMode ? "Budget Mode" : "Online Mode"}
         </h1>   
       </div>
     </header>
