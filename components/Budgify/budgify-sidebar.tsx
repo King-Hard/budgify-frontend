@@ -1,5 +1,9 @@
 "use client";
 
+import { TbDashboard } from "react-icons/tb";
+import { LuGoal } from "react-icons/lu";
+import { GrDocumentTime } from "react-icons/gr";
+
 import {
   Sidebar,
   SidebarContent,
@@ -7,7 +11,7 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar"
-import { ArrowLeftRight, Bell, CircleQuestionMark, CircleUser, EllipsisVertical, LayoutDashboard, LogOut, Settings, Target, TrendingDown, TrendingUp, Wallet, WifiOff } from "lucide-react";
+import { ArrowLeftRight, Bell, CircleQuestionMark, CircleUser, EllipsisVertical, Gauge, LayoutDashboard, LogOut, Settings, StickyNote, Target, TrendingDown, TrendingUp, Wallet, WifiOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
@@ -41,8 +45,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               href="/budgify.com/dashboard"
               className="flex items-center gap-2 cursor-default"
             >
-              <LayoutDashboard strokeWidth={1.5} size={18}/> 
-              <p className="text-[15px]">Dashboard</p>
+              <TbDashboard strokeWidth={1.5} size={16}/> 
+              <p className="text-[14px] text-white">Dashboard</p>
             </Link>
           </div>
 
@@ -52,7 +56,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               className="flex items-center gap-2 cursor-default"
             >
               <ArrowLeftRight strokeWidth={2} size={16}/> 
-              <p className="text-[15px]">Transaction</p>
+              <p className="text-[14px]">Transaction</p>
             </Link>
           </div>
 
@@ -61,8 +65,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               href="/budgify.com/bill-reminder"
               className="flex items-center gap-2 cursor-default"
             >
-              <Bell strokeWidth={2} size={16}/> 
-              <p className="text-[15px]">Bill Reminder</p>
+              <StickyNote strokeWidth={2} size={15.5}/> 
+              <p className="text-[14px]">Bill Reminder</p>
             </Link>
           </div>
 
@@ -71,8 +75,8 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               href="/budgify.com/goal-tracker"
               className="flex items-center gap-2 cursor-default"
             >
-              <Target strokeWidth={2} size={16}/> 
-              <p className="text-[15px]">Goal Tracker</p>
+              <LuGoal strokeWidth={2} size={16}/> 
+              <p className="text-[14px]">Goal Tracker</p>
             </Link>
           </div>
         </SidebarGroup>
@@ -181,7 +185,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
 
               <div className="hover:bg-input px-2.5 py-1.5 rounded-lg mb-2">
                 <div className="flex items-center gap-2 cursor-default">
-                  <CircleUser strokeWidth={1.5} size={16} className="mt-0.5"/> 
+                  <CircleUser strokeWidth={2} size={16} className="mt-0.5"/> 
                   <p className="text-[14px]">Account</p>
                 </div>
               </div>
@@ -190,7 +194,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
             <div className="mb-2 px-1.5" onClick={(login)}>
               <div className="hover:bg-input px-2.5 py-1.5 rounded-lg">
                 <div className="flex items-center gap-2 cursor-default">
-                  <LogOut strokeWidth={1.5} size={16}/> 
+                  <LogOut strokeWidth={2} size={16}/> 
                   <p className="text-[14px]">
                     Log out
                   </p>
