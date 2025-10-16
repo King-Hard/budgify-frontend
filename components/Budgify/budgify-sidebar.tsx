@@ -184,7 +184,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
 
               <div className="hover:bg-input px-2.5 py-1.5 rounded-lg mb-1">
                 <div className="flex items-center gap-2 cursor-default">
-                  <CircleUser strokeWidth={2} size={16} className="mt-0.5"/> 
+                  <CircleUser strokeWidth={2} size={16} /> 
                   <p className="text-[14px]">Account</p>
                 </div>
               </div>
