@@ -9,19 +9,20 @@ export default function BudgifyLayout({children}: Readonly<{children: React.Reac
   const [isBudgetMode, setIsBudgetMode] = useState(false);
   
   return (
-    <div className="">
-      <SidebarProvider>
-        <AppSidebar
-          isBudgetMode={isBudgetMode}
-          onToggleBudgetMode={() => setIsBudgetMode(!isBudgetMode)}
-        />
-          <div className="flex flex-col w-full">
+
+    <SidebarProvider>
+      <AppSidebar
+        isBudgetMode={isBudgetMode}
+        onToggleBudgetMode={() => setIsBudgetMode(!isBudgetMode)}
+      />
+        <div className="relative flex flex-col w-full h-screen overflow-hidden">
+          <header className="fixed top-0 z-50 w-full">
             <SiteHeader isBudgetMode={isBudgetMode}/>
-            <main className="flex-1 p-5 overflow-y-auto">
-              {children}
-            </main>
-          </div>
-      </SidebarProvider>
-    </div>
+          </header>
+          <main className="flex-1 p-5 pr-4 overflow-y-auto scroll-smooth mt-[62px] hide-scrollbar ">
+            {children}
+          </main>
+        </div>
+    </SidebarProvider>
   );
 }

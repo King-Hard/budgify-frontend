@@ -2,8 +2,6 @@
 
 import { TbDashboard } from "react-icons/tb";
 import { LuGoal } from "react-icons/lu";
-import { GrDocumentTime } from "react-icons/gr";
-
 import {
   Sidebar,
   SidebarContent,
@@ -16,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ModeToggle from "../ui/mode-toggle";
 
 export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
   const [account, setAccount] = useState(false);
@@ -46,7 +45,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
               className="flex items-center gap-2 cursor-default"
             >
               <TbDashboard strokeWidth={1.5} size={16}/> 
-              <p className="text-[14px] text-white">Dashboard</p>
+              <p className="text-[14px]">Dashboard</p>
             </Link>
           </div>
 
@@ -87,22 +86,22 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
             <div className="py-2 px-4 rounded-lg border">
               <div className="flex items-center justify-between mb-1">
                 <h1 className="text-muted-foreground text-sm">Income</h1>
-                <TrendingUp strokeWidth={2} size={16} className="text-green-300"/>
+                <TrendingUp strokeWidth={2} size={16} className="text-green-500"/>
               </div>
-              <p className="font-medium text-xl">₱107,100</p>
+              <p className="font-medium text-xl">₱40,000</p>
             </div>
 
             <div className="py-2 px-4 rounded-lg border">
               <div className="flex items-center justify-between mb-1">
                 <h1 className="text-muted-foreground">Expenses</h1>
-                <TrendingDown strokeWidth={2} size={16} className="text-red-300"/>
+                <TrendingDown strokeWidth={2} size={16} className="text-red-500"/>
               </div>
-              <p className="font-medium text-xl">₱89,400</p>
+              <p className="font-medium text-xl">₱13,350</p>
             </div>
           </SidebarGroup>
         </div>
 
-        <SidebarGroup className="mt-18.5">
+        <SidebarGroup className="mt-22">
           <div className="hover:bg-accent px-2.5 py-1.5 rounded-lg mb-0.5">
             <div 
               className="flex items-center gap-2 cursor-default"
@@ -124,7 +123,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
       </SidebarContent>
 
       <SidebarFooter onClick={() => setAccount(!account)}>
-        <div className={`rounded-lg p-2 transition-colors cursor-pointer ${account ? "bg-accent" : "hover:bg-accent"}`}>
+        <div className={`rounded-lg p-2 mb-0.5 transition-colors cursor-pointer ${account ? "bg-accent" : "hover:bg-accent"}`}>
           <div className="flex items-center gap-2">
             <Button size="icon" className="h-8 w-8 rounded-md" />
             <div className="flex items-center justify-between w-full">
@@ -141,7 +140,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
       {account ? (
         <div 
           onClick={(e) => {if (e.target === e.currentTarget) setAccount(false)}}
-          className="fixed top-65 right-99 w-full h-full flex items-center justify-center bg-opacity-30 z-50 transition-all duration-500"
+          className="fixed top-60 right-99 w-full h-full flex items-center justify-center bg-opacity-30 z-50 transition-all duration-500"
         >
           <div className="border bg-accent w-[240px] rounded-lg">
             <div className="rounded-lg rounded-b-none px-2 py-3 border-b mb-2">
@@ -183,12 +182,14 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
                 </div>
               </div>
 
-              <div className="hover:bg-input px-2.5 py-1.5 rounded-lg mb-2">
+              <div className="hover:bg-input px-2.5 py-1.5 rounded-lg mb-1">
                 <div className="flex items-center gap-2 cursor-default">
                   <CircleUser strokeWidth={2} size={16} className="mt-0.5"/> 
                   <p className="text-[14px]">Account</p>
                 </div>
               </div>
+       
+              <ModeToggle/>
             </div>
 
             <div className="mb-2 px-1.5" onClick={(login)}>
