@@ -14,19 +14,22 @@ import {
   SquaresExclude,
   Wallet,
 } from "lucide-react";
+import toast from "react-hot-toast";
 
 export default function AddIncome() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [open, setOpen] = useState(false);
+  function Add() {
+    toast.success("Income added successfully!");
+  }
 
   const categories = [
-    { value: "allowance", label: "Allowance", icon: <Wallet size={16} /> },
-    { value: "salary", label: "Salary", icon: <Briefcase size={16} /> },
-    { value: "freelance", label: "Freelance", icon: <Laptop size={16} /> },
-    { value: "business", label: "Business", icon: <Handshake size={16} /> },
-    { value: "investment", label: "Investment", icon: <SquaresExclude size={16} /> },
+    { value: "allowance", label: "Allowance", icon: <Wallet size={16} strokeWidth={2} /> },
+    { value: "salary", label: "Salary", icon: <Briefcase size={16} strokeWidth={2} /> },
+    { value: "freelance", label: "Freelance", icon: <Laptop size={16} strokeWidth={2} /> },
+    { value: "business", label: "Business", icon: <Handshake size={16} strokeWidth={2} /> },
+    { value: "investment", label: "Investment", icon: <SquaresExclude size={16} strokeWidth={2} /> },
   ];
-
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
@@ -88,8 +91,8 @@ export default function AddIncome() {
       </div>
 
       <Button 
-        type="submit"
         className="w-full mt-4"
+        onClick={(Add)}
       >
         Add Income
       </Button>

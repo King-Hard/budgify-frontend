@@ -5,9 +5,13 @@ import { useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import toast from "react-hot-toast";
 
 export default function ChangeBudget() {
   const [edit, setEdit] = useState(false);
+  function Add() {
+    toast.success("Budget updated successfully!");
+  }
 
   return (
     <div className="">
@@ -25,10 +29,10 @@ export default function ChangeBudget() {
           }}
           className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-30 z-50 transition-all duration-500"
         >
-          <form className="bg-accent p-5 rounded-lg border">
+          <div className="bg-accent p-5 rounded-lg border">
             <div className="mb-4">
               <h1 className="text-lg">Recommended budget ₱20,000</h1>
-              <p className="text-muted-foreground text-sm text-center">change your monthly budget anytime.</p>
+              <p className="text-muted-foreground text-sm text-center">Stay within budget and let your savings grow</p>
             </div>
 
             <div className="mb-4">
@@ -39,11 +43,20 @@ export default function ChangeBudget() {
               />
             </div>
 
-            <div className="flex items-center gap-2 justify-center">
-              <Button variant="outline" className="py-2 px-3 w-20">Cancel</Button>
-              <Button className="py-2 px-3 w-20">Save</Button>
+            <div className="grid grid-cols-2 gap-2">
+              <Button 
+                variant="outline" 
+                onClick={() =>setEdit(false)}
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={(Add)}
+              >
+                Save
+              </Button>
             </div>
-          </form>
+          </div>
         </div>
       ) : (
         <></>

@@ -153,7 +153,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>  
 
             <div className="gap-1 px-1.5 border-b mb-2">
               <div

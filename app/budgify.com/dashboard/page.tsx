@@ -21,7 +21,7 @@ export default function Dashboard() {
             <TrendingDown size={16} strokeWidth={2} className="text-red-500"/>
           </div>
 
-          <p className="text-2xl font-medium">13,350</p>
+          <p className="text-2xl font-medium">₱13,350</p>
         </div>
 
         <div className="border bg-card p-5 rounded-lg">
@@ -41,7 +41,7 @@ export default function Dashboard() {
 
           <p className="text-2xl font-medium">₱46,650</p>
         </div>
-      </div>
+      </div>  
 
       <div className="mt-5 p-5 border rounded-lg bg-card">
         <div className="">
@@ -96,10 +96,8 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h1 className="text-red-500 text-center font-medium">-₱40,000</h1>
-              <div className="border rounded-md px-2">
-                <p className="text-[14px] text-red-500">healthcare</p>
-              </div>
+              <h1 className="font-medium">-₱40,000</h1> 
+              <p className="text-[14px] text-right text-red-500">healthcare</p>
             </div>
           </div>
 
@@ -114,10 +112,8 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h1 className="text-green-500 text-center font-medium">+₱5,000</h1>
-              <div className="border rounded-md px-2">
-                <p className="text-[14px] text-green-500">freelance</p>
-              </div>
+              <h1 className="font-medium">+₱5,000</h1>       
+              <p className="text-[14px] text-right text-green-500">freelance</p>
             </div>
           </div>
 
@@ -132,10 +128,8 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h1 className="text-red-500 text-center font-medium">-₱1,000</h1>
-              <div className="border rounded-md px-2">
-                <p className="text-[14px] text-red-500">utility</p>
-              </div>
+              <h1 className="font-medium">-₱1,000</h1>       
+              <p className="text-[14px] text-right text-red-500">utility</p>
             </div>
           </div>
 
@@ -150,10 +144,8 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h1 className="text-green-500 text-center font-medium">+₱20,000</h1>
-              <div className="border rounded-md px-2">
-                <p className="text-[14px] text-green-500">investment</p>
-              </div>
+              <h1 className="font-medium">+₱20,000</h1>
+              <p className="text-[14px] text-right text-green-500">investment</p>
             </div>
           </div>
 
@@ -168,10 +160,8 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h1 className="text-green-500 text-center font-medium">+₱10,000</h1>
-              <div className="border rounded-md px-2">
-                <p className="text-[14px] text-green-500">business</p>
-              </div>
+              <h1 className=" font-medium">+₱10,000</h1>    
+              <p className="text-[14px] text-right text-green-500">business</p>
             </div>
           </div>
 
@@ -186,13 +176,10 @@ export default function Dashboard() {
               </div>
             </div>
             <div>
-              <h1 className="text-red-500 text-center font-medium">-₱5,000</h1>
-              <div className="border rounded-md px-2">
-                <p className="text-[14px] text-red-500">grocery</p>
-              </div>
+              <h1 className="font-medium">-₱5,000</h1> 
+              <p className="text-[14px] text-right text-red-500">grocery</p>
             </div>
           </div>
-
         </div>  
       </div>
     </div>

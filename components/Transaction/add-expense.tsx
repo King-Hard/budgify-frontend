@@ -16,10 +16,14 @@ import {
   Utensils,
 } from "lucide-react";
 import { Button } from "../ui/button";
+import toast from "react-hot-toast";
 
 export default function AddExpense() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [open, setOpen] = useState(false);
+  function Add() {
+    toast.success("Expense added successfully!");
+  }
 
   const categories = [
     { value: "food", label: "Daily Meals", icon: <Utensils size={16} strokeWidth={2} /> },
@@ -91,8 +95,8 @@ export default function AddExpense() {
       </div>
 
       <Button 
-        type="submit"
         className="w-full mt-4"
+        onClick={(Add)}
       >
         Add Expense
       </Button>
