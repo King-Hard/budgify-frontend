@@ -11,8 +11,12 @@ import { useRouter } from "next/navigation";
 export default function SignUp() {
   const router = useRouter();
   
-  async function loading() {
-    router.push("/loading");
+  async function onboarding() {
+    const timer = setTimeout(() => {
+      router.push("/onboarding");
+    }, 1000)
+
+    return () => clearTimeout(timer);
   }
 
   return (
@@ -88,7 +92,7 @@ export default function SignUp() {
           </div>
 
           <Button
-            onClick={loading}
+            onClick={onboarding}
             type="button"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 h-10 w-full text-sm font-medium text-primary-foreground transition-all duration-150 active:scale-95 focus:outline-none focus:ring-2 focus:ring-ring"
           >

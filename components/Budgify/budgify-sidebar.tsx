@@ -41,7 +41,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
         <SidebarGroup className="gap-1 ">
           <div className="hover:bg-accent p-2.5 py-1.5 rounded-lg">
             <Link 
-              href="/budgify.com/dashboard"
+              href="/budgify/dashboard"
               className="flex items-center gap-2 cursor-default"
             >
               <TbDashboard strokeWidth={1.5} size={16}/> 
@@ -51,7 +51,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
 
           <div className="hover:bg-accent px-2.5 py-1.5 rounded-lg">
             <Link 
-              href="/budgify.com/transaction"
+              href="/budgify/transaction"
               className="flex items-center gap-2 cursor-default"
             >
               <ArrowLeftRight strokeWidth={2} size={16}/> 
@@ -61,7 +61,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
 
           <div className="hover:bg-accent px-2.5 py-1.5 rounded-lg">
             <Link 
-              href="/budgify.com/bill-reminder"
+              href="/budgify/bill-reminder"
               className="flex items-center gap-2 cursor-default"
             >
               <StickyNote strokeWidth={2} size={15.5}/> 
@@ -71,7 +71,7 @@ export function AppSidebar({isBudgetMode, onToggleBudgetMode}) {
 
           <div className="hover:bg-accent px-2.5 py-1.5 rounded-lg">
             <Link 
-              href="/budgify.com/goal-tracker"
+              href="/budgify/goal-tracker"
               className="flex items-center gap-2 cursor-default"
             >
               <LuGoal strokeWidth={2} size={16}/> 

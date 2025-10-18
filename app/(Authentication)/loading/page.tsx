@@ -6,11 +6,11 @@ import { useEffect } from "react"
 export default function Loading() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = "/budgify.com/dashboard"
+      window.location.href = "/budgify/dashboard"
     }, 2000) // 2 seconds
 
     return () => clearTimeout(timer)
-  }, [])
+  }, []);
 
   return (
     <div className="flex items-center justify-center"
@@ -27,5 +27,5 @@ export default function Loading() {
         </div>
       </div>
     </div>
-  )
+  );
 }
