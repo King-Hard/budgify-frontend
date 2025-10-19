@@ -7,14 +7,14 @@ import { useEffect } from "react"
 export default function Loading() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = "/budgify/dashboard"
-    }, 2000) // 2 seconds
+      window.location.href = "/dashboard"
+    }, 2000);
 
     return () => clearTimeout(timer)
   }, []);
 
   return (
-    <div className="flex items-center justify-center"
+    <div className="flex items-center justify-center h-screen bg-gradient-to-br from-muted to-background"
       style={{ minHeight: "calc(100dvh - 20px)" }}
     >
       <div className="">

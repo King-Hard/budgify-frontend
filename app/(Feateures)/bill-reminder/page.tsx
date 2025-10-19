@@ -1,5 +1,4 @@
-import AddBill from "@/components/Bill/add-bill";
-import { Button } from "@/components/ui/button";
+import AddBill from "@/components/BillComponents/add-bill";
 import { Banknote, CircleCheck, CircleCheckBig, Clock, Droplet, House, Laptop, PiggyBank, Plus, ReceiptText, TrendingDown, TrendingUp, TriangleAlert, Tv, Wallet, Wifi, Zap } from "lucide-react";
 
 export default function BillReminder() {

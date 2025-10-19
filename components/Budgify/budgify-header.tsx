@@ -12,5 +12,3 @@ export default function SiteHeader({isBudgetMode}) {
     </header>
   );
 }
-
-{/*<Separator orientation="vertical" className="mx-2 w-[10px] data-[orientation=vertical]:h-4" />*/}

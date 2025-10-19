@@ -1,7 +1,7 @@
 "use client";
 
-import AddExpense from "@/components/Transaction/add-expense";
-import AddIncome from "@/components/Transaction/add-income";
+import AddExpense from "@/components/TransactionComponents/add-expense";
+import AddIncome from "@/components/TransactionComponents/add-income";
 import { Cross, Gamepad2, GraduationCap, MinusCircle, PlusCircle, ReceiptText, ShoppingCart, User, Utensils } from "lucide-react";
 import { useState } from "react";
 

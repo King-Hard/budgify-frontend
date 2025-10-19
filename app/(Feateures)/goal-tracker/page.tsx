@@ -1,8 +1,7 @@
 "use client";
 
-import AddFunds from "@/components/Goal/add-funds";
-import AddGoal from "@/components/Goal/add-goal";
-import { Button } from "@/components/ui/button";
+import AddFunds from "@/components/GoalComponents/add-funds";
+import AddGoal from "@/components/GoalComponents/add-goal";
 import { Calendar, ChartNoAxesColumnIncreasing, CircleCheckBig, Goal, GraduationCap, HandCoins, Handshake, Hourglass, House, Landmark, Laptop, PiggyBank, Plane, ShieldAlert, Target, TrendingUp, Trophy } from "lucide-react";
 
 export default function GoalTracker() {
