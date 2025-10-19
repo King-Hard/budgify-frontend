@@ -28,7 +28,7 @@ export default function OnBoarding() {
         {step === 1 && (
           <>
             <div className="flex justify-center mb-1">
-              <div className="p-2 rounded-full bg-accent">
+              <div className="p-2 rounded-sm bg-accent">
                 <Shield className="text-primary" size={22} />
               </div>
             </div>
@@ -85,18 +85,19 @@ export default function OnBoarding() {
         {step === 2 && (
           <>
             <div className="flex justify-center items-center gap-2 mb-1">
-              <div className="p-2 rounded-full bg-accent">
+              <div className="p-2 rounded-sm bg-accent">
                 <Landmark className="text-primary" size={22} />
               </div>
 
               <ArrowRightLeft className="text-muted-foreground" size={20} strokeWidth={2}/>
 
-              <div className="p-2 rounded-full bg-accent">
+              <div className="p-2 rounded-sm bg-accent">
                 <Wallet className="text-primary" size={22} />
               </div>
             </div>
 
             <h1 className="text-xl font-semibold mb-4">Bank Account Linking</h1>
+
             <p className="text-muted-foreground text-sm mb-6">
               Coming soon! You’ll soon be able to securely connect your bank for seamless tracking.
             </p>

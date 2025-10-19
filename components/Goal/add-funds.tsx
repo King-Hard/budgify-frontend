@@ -28,7 +28,7 @@ export default function AddFunds() {
             }}
             className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-30 z-50 transition-all duration-500"
           >
-            <div className="bg-accent p-5 rounded-lg border">
+            <div className="bg-gradient-to-br from-muted to-background p-6 rounded-lg border">
               <div className="mb-4">
                 <h1 className="text-lg ">Add Funds</h1>
                 <p className="text-muted-foreground text-sm text-center">Keep adding funds and reach your goals faster</p>

@@ -59,7 +59,7 @@ export default function AddGoal() {
           }}
           className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-30 z-50 transition-all duration-500"
         >
-          <div className="bg-accent p-5 border rounded-lg w-[50%]">
+          <div className="bg-gradient-to-br from-muted to-background p-6 rounded-lg border w-[50%]">
             <div className="mb-4 flex justify-between">
               <div className="">
                 <h1 className="text-lg">Add New Goal</h1>

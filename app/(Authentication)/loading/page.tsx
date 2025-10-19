@@ -1,5 +1,6 @@
 "use client";
 
+import { Spinner } from "@/components/ui/spinner";
 import { Wallet } from "lucide-react"
 import { useEffect } from "react"
 
@@ -22,7 +23,8 @@ export default function Loading() {
           <p className="text-5xl font-medium">BUDGIFY</p>
         </div>
 
-        <div className="text-center mt-4 text-lg font-medium">
+        <div className="flex items-center justify-center gap-1 mt-3 text-lg font-medium">
+          <Spinner className="size-5"/>
           Loading...
         </div>
       </div>
