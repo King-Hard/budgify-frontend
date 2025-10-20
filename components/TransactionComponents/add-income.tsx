@@ -10,7 +10,6 @@ import {
   ChevronUp,
   Handshake,
   Laptop,
-  PlusCircle,
   SquaresExclude,
   Wallet,
 } from "lucide-react";
@@ -19,16 +18,17 @@ import toast from "react-hot-toast";
 export default function AddIncome() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [open, setOpen] = useState(false);
+
   function Add() {
     toast.success("Income added successfully!");
   }
 
   const categories = [
-    { value: "allowance", label: "Allowance", icon: <Wallet size={16} strokeWidth={2} /> },
-    { value: "salary", label: "Salary", icon: <Briefcase size={16} strokeWidth={2} /> },
-    { value: "freelance", label: "Freelance", icon: <Laptop size={16} strokeWidth={2} /> },
-    { value: "business", label: "Business", icon: <Handshake size={16} strokeWidth={2} /> },
-    { value: "investment", label: "Investment", icon: <SquaresExclude size={16} strokeWidth={2} /> },
+    { value: "allowance", label: "Allowance", icon: Wallet },
+    { value: "salary", label: "Salary", icon: Briefcase },
+    { value: "freelance", label: "Freelance", icon: Laptop },
+    { value: "business", label: "Business", icon: Handshake },
+    { value: "investment", label: "Investment", icon: SquaresExclude },
   ];
 
   const handleCategorySelect = (category) => {
@@ -38,23 +38,20 @@ export default function AddIncome() {
 
   return (
     <div className="">
+      {/* Title */}
       <div className="mb-3">
         <Label className="font-normal mb-2 text-base text-foreground">Title</Label>
-        <Input
-          type="text"
-          placeholder="Describe your income source"
-        />
+        <Input type="text" placeholder="Describe your income source" />
       </div>
 
+      {/* Amount */}
       <div className="mb-3">
         <Label className="font-normal mb-2 text-base text-foreground">Amount (₱)</Label>
-        <Input
-          type="number"
-          placeholder="0.00"
-        />
+        <Input type="number" placeholder="0.00" />
       </div>
 
-      <div className="mb-3">
+      {/* Category Selector */}
+      <div className="mb-3 relative">
         <Label className="font-normal mb-2 text-base text-foreground">Source</Label>
         <Button
           variant="outline"
@@ -64,36 +61,47 @@ export default function AddIncome() {
           <div className="flex gap-2 items-center">
             {selectedCategory ? (
               <>
-                {selectedCategory.icon}
-                {selectedCategory.label}
+                <selectedCategory.icon size={16} className="text-green-500" />
+                <span className="text-green-500">{selectedCategory.label}</span>
               </>
             ) : (
-              <span className="">Select income source</span>
+              <span>Select income source</span>
             )}
           </div>
-          <span className="text-gray-300">{open ? <ChevronUp/> : <ChevronDown />}</span>
+          <span className="text-gray-300">
+            {open ? <ChevronUp /> : <ChevronDown />}
+          </span>
         </Button>
 
         {open && (
-          <ul className="absolute z-10 mt-1 bg-accent w-[373.5px] border rounded-md shadow-md max-h-60 overflow-auto hide-scrollbar scroll-smooth">
-            {categories.map((category) => (
-              <li
-                key={category.value}
-                className="px-3 py-2 hover:text-green-500 rounded-md cursor-pointer flex gap-2 items-center transition-colors duration-200"
-                onClick={() => handleCategorySelect(category)}
-              >
-                {category.icon}
-                {category.label}
-              </li>
-            ))}
+          <ul className="absolute z-10 mt-1 bg-accent w-full border rounded-md shadow-md max-h-60 overflow-auto hide-scrollbar scroll-smooth">
+            {categories.map((category) => {
+              const Icon = category.icon;
+              const isSelected = selectedCategory?.value === category.value;
+
+              return (
+                <li
+                  key={category.value}
+                  className={`px-3 py-2 rounded-md cursor-pointer flex gap-2 items-center transition-colors duration-200
+                    ${isSelected ? "text-green-500 font-medium" : "text-foreground hover:font-medium"}`}
+                  onClick={() => handleCategorySelect(category)}
+                >
+                  <Icon
+                    size={16}
+                    className={`transition-colors duration-200 ${
+                      isSelected ? "text-green-500" : "text-muted-foreground"
+                    }`}
+                  />
+                  {category.label}
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>
 
-      <Button 
-        className="w-full mt-4"
-        onClick={(Add)}
-      >
+      {/* Submit Button */}
+      <Button className="w-full mt-4" onClick={Add}>
         Add Income
       </Button>
     </div>

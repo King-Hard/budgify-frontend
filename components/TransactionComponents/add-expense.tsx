@@ -9,7 +9,6 @@ import {
   Cross,
   Gamepad2,
   GraduationCap,
-  MinusCircle,
   ReceiptText,
   ShoppingCart,
   User,
@@ -21,18 +20,20 @@ import toast from "react-hot-toast";
 export default function AddExpense() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [open, setOpen] = useState(false);
+
   function Add() {
     toast.success("Expense added successfully!");
   }
 
+  // ✅ same color palette as the pie chart
   const categories = [
-    { value: "food", label: "Daily Meals", icon: <Utensils size={16} strokeWidth={2} /> },
-    { value: "utility", label: "Bills & Utilities", icon: <ReceiptText size={16} strokeWidth={2} /> },
-    { value: "healthcare", label: "Healthcare", icon: <Cross size={16} strokeWidth={2} /> },
-    { value: "education", label: "Education", icon: <GraduationCap size={16} strokeWidth={2} /> },
-    { value: "personal", label: "Personal Needs", icon: <User size={16} strokeWidth={2} /> },
-    { value: "entertainment", label: "Entertainment", icon: <Gamepad2 size={16} strokeWidth={2} /> },
-    { value: "grocery", label: "Groceries", icon: <ShoppingCart size={16} strokeWidth={2} /> },
+    { value: "food", label: "Daily Meals", icon: Utensils, color: "text-red-400" },
+    { value: "utility", label: "Bills & Utilities", icon: ReceiptText, color: "text-yellow-400" },
+    { value: "healthcare", label: "Healthcare", icon: Cross, color: "text-pink-400" },
+    { value: "education", label: "Education", icon: GraduationCap, color: "text-blue-400" },
+    { value: "personal", label: "Personal Needs", icon: User, color: "text-purple-400" },
+    { value: "entertainment", label: "Entertainment", icon: Gamepad2, color: "text-green-400" },
+    { value: "grocery", label: "Groceries", icon: ShoppingCart, color: "text-orange-400" },
   ];
 
   const handleCategorySelect = (category) => {
@@ -42,23 +43,20 @@ export default function AddExpense() {
 
   return (
     <div className="">
+      {/* Title */}
       <div className="mb-3">
         <Label className="font-normal mb-2 text-base text-foreground">Title</Label>
-        <Input
-          type="text"
-          placeholder="What did you spend on?"
-        />
+        <Input type="text" placeholder="What did you spend on?" />
       </div>
 
+      {/* Amount */}
       <div className="mb-3">
         <Label className="font-normal mb-2 text-base text-foreground">Amount (₱)</Label>
-        <Input
-          type="number"
-          placeholder="0.00"
-        />
+        <Input type="number" placeholder="0.00" />
       </div>
 
-      <div className="mb-3">
+      {/* Category Selector */}
+      <div className="mb-3 relative">
         <Label className="font-normal mb-2 text-base text-foreground">Category</Label>
         <Button
           variant="outline"
@@ -68,36 +66,51 @@ export default function AddExpense() {
           <div className="flex gap-2 items-center">
             {selectedCategory ? (
               <>
-                {selectedCategory.icon}
-                {selectedCategory.label}
+                <selectedCategory.icon
+                  size={16}
+                  className={selectedCategory.color}
+                />
+                <span className={selectedCategory.color}>{selectedCategory.label}</span>
               </>
             ) : (
-              <span className="">Select a category</span>
+              <span>Select a category</span>
             )}
           </div>
-          <span className="text-gray-300">{open ? <ChevronUp/> : <ChevronDown />}</span>
+          <span className="text-gray-300">
+            {open ? <ChevronUp /> : <ChevronDown />}
+          </span>
         </Button>
 
         {open && (
-          <ul className="absolute z-10 mt-1 bg-accent w-[373.5px] border rounded-md shadow-md max-h-60 overflow-auto hide-scrollbar scroll-smooth">
-            {categories.map((category) => (
-              <li
-                key={category.value}
-                className="px-3 py-2 hover:text-red-500 rounded-md cursor-pointer flex gap-2 items-center transition-colors duration-200"
-                onClick={() => handleCategorySelect(category)}
-              >
-                {category.icon}
-                {category.label}
-              </li>
-            ))}
+          <ul className="absolute z-10 mt-1 bg-accent w-full border rounded-md shadow-md max-h-60 overflow-auto hide-scrollbar scroll-smooth">
+            {categories.map((category) => {
+              const Icon = category.icon;
+              const isSelected = selectedCategory?.value === category.value;
+
+              return (
+                <li
+                  key={category.value}
+                  className={`px-3 py-2 rounded-md cursor-pointer flex gap-2 items-center transition-colors duration-200
+                    ${isSelected ? `${category.color} font-medium` : "text-foreground hover:font-medium"}
+                    hover:${category.color}`}
+                  onClick={() => handleCategorySelect(category)}
+                >
+                  <Icon
+                    size={16}
+                    className={`transition-colors duration-200 ${
+                      isSelected ? category.color : "text-muted-foreground group-hover:text-foreground"
+                    }`}
+                  />
+                  {category.label}
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>
 
-      <Button 
-        className="w-full mt-4"
-        onClick={(Add)}
-      >
+      {/* Submit Button */}
+      <Button className="w-full mt-4" onClick={Add}>
         Add Expense
       </Button>
     </div>

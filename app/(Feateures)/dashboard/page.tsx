@@ -1,5 +1,5 @@
 import ChangeBudget from "@/components/DashboardComponets/change-budget";
-import { Cross, EditIcon, Handshake, Laptop, PiggyBank, ReceiptText, SquaresExclude, TrendingDown, TrendingUp, Utensils, Wallet } from "lucide-react";
+import { Cross, EditIcon, Handshake, Laptop, PiggyBank, ReceiptText, SquaresExclude, TrendingDown, TrendingUp, User, Utensils, Wallet } from "lucide-react";
 
 export default function Dashboard() {
   return (
@@ -87,8 +87,8 @@ export default function Dashboard() {
         <div className="mt-4">
           <div className="p-4 rounded-lg mt-3 border flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="p-2 border border-red-500 rounded-md">
-                <Cross className="text-red-500" size={20} strokeWidth={2}/>
+              <div className="p-2 border border-[#f472b6] rounded-md">
+                <Cross className="text-[#f472b6]" size={20} strokeWidth={2}/>
               </div>
               <div>
                 <h1>Maintanance</h1>
@@ -97,7 +97,7 @@ export default function Dashboard() {
             </div>
             <div>
               <h1 className="font-medium">-₱40,000</h1> 
-              <p className="text-[14px] text-right text-red-500">healthcare</p>
+              <p className="text-[14px] text-right text-[#f472b6]">healthcare</p>
             </div>
           </div>
 
@@ -119,8 +119,8 @@ export default function Dashboard() {
 
           <div className="p-4 rounded-lg mt-3 border flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="p-2 border border-red-500 rounded-md">
-                <ReceiptText className="text-red-500" size={20} strokeWidth={2}/>
+              <div className="p-2 border border-[#facc15] rounded-md">
+                <ReceiptText className="text-[#facc15]" size={20} strokeWidth={2}/>
               </div>
               <div>
                 <h1>Electric Bill</h1>
@@ -129,7 +129,7 @@ export default function Dashboard() {
             </div>
             <div>
               <h1 className="font-medium">-₱1,000</h1>       
-              <p className="text-[14px] text-right text-red-500">utility</p>
+              <p className="text-[14px] text-right text-[#facc15]">utility</p>
             </div>
           </div>
 
@@ -151,24 +151,24 @@ export default function Dashboard() {
 
           <div className="p-4 rounded-lg mt-3 border flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="p-2 border border-green-500 rounded-md">
-                <Handshake className="text-green-500" size={20} strokeWidth={2}/>
+              <div className="p-2 border border-[#a78bfa] rounded-md">
+                <User className="text-[#a78bfa]" size={20} strokeWidth={2}/>
               </div>
               <div>
-                <h1>Selling Rice</h1>
+                <h1>New Phone</h1>
                 <p className="text-sm text-muted-foreground">1 month ago</p>
               </div>
             </div>
             <div>
               <h1 className=" font-medium">+₱10,000</h1>    
-              <p className="text-[14px] text-right text-green-500">business</p>
+              <p className="text-[14px] text-right text-[#a78bfa]">personal</p>
             </div>
           </div>
 
           <div className="p-4 rounded-lg mt-3 border flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="p-2 border border-red-500 rounded-md">
-                <Utensils className="text-red-500" size={20} strokeWidth={2}/>
+              <div className="p-2 border border-[#fb923c] rounded-md">
+                <Utensils className="text-[#fb923c]" size={20} strokeWidth={2}/>
               </div>
               <div>
                 <h1>Groceries</h1>
@@ -177,7 +177,7 @@ export default function Dashboard() {
             </div>
             <div>
               <h1 className="font-medium">-₱5,000</h1> 
-              <p className="text-[14px] text-right text-red-500">grocery</p>
+              <p className="text-[14px] text-right text-[#fb923c]">grocery</p>
             </div>
           </div>
         </div>  
